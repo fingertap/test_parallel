@@ -7,7 +7,7 @@ import logging.handlers
 class LoggingModule(ABC):
     def __init__(self,
                  prefix: str,
-                 logger_name: str = 'VVC',
+                 logger_name: str = 'Test',
                  stream_loglevel: str = 'INFO',
                  file_loglevel: str = 'DEBUG',
                  logfile: str = None):

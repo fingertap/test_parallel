@@ -1,5 +1,3 @@
-import os
-os.environ["CUDA_VISIBLE_DEVICES"]="0,1,2,3,4,5,6,7"
 import time
 import torch
 import torch.nn as nn
@@ -16,18 +14,17 @@ class Logger(LoggingModule):
 
 
 device = 'cuda'
-batch_size = 80
+batch_size = 10
 nlayers = 5
 ndata = 500000
 dmodel = 1000
 lr = 0.1
-
 dataset = TestDataSet(ndata, dmodel)
 sampler = RandomSampler(dataset)
 dataloader = DataLoader(dataset, batch_size=batch_size, sampler=sampler)
-model = nn.DataParallel(TestNet(nlayers, dmodel)).to(device)
+model = TestNet(nlayers, dmodel).to(device)
 optimizer = optim.SGD(model.parameters(), lr)
-logger = Logger('data parallel')
+logger = Logger('single gpu')
 
 logger.info('Run on {} gpus with batchsize = {}.'.format(
     torch.cuda.device_count(), batch_size
