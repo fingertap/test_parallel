@@ -4,8 +4,8 @@ Using a single GPU:
 
 ```bash
 $ python test_parallel/single_gpu.py
-2020-12-25 15:02:14,902 [INFO] <single gpu> Run on 10 gpus with batchsize = 80.
-2020-12-25 15:02:44,011 [INFO] <single gpu> Time ellapsed: 29.108601570129395s
+2020-12-25 15:06:09,641 [INFO] <single gpu> Run on 1 gpus with batchsize = 80.
+2020-12-25 15:06:38,735 [INFO] <single gpu> Time ellapsed: 29.093183994293213ss
 ```
 
 Using `torch.nn.DataParallel`:
