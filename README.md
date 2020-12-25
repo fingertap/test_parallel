@@ -40,3 +40,5 @@ Setting OMP_NUM_THREADS environment variable for each process to be 1 in default
 2020-12-24 16:36:45,795 [INFO] <data parallel> Time ellapsed: 7.6677258014678955s
 2020-12-24 16:36:45,795 [INFO] <data parallel> Time ellapsed: 7.665920734405518s
 ```
+
+$$\sin^2\theta + \cos^2\theta=1$$
