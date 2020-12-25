@@ -16,7 +16,7 @@ class Logger(LoggingModule):
 
 
 device = 'cuda'
-batch_size = 80
+batch_size = 640
 nlayers = 5
 ndata = 500000
 dmodel = 1000
