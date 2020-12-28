@@ -1,3 +1,5 @@
+import os
+os.environ["CUDA_VISIBLE_DEVICES"] = "0,1,2,3,4,5,6,7"
 import time
 import torch
 import torch.nn as nn
@@ -37,9 +39,10 @@ model = nn.parallel.DistributedDataParallel(
 optimizer = optim.SGD(model.parameters(), lr)
 logger = Logger('data parallel')
 
-logger.info('Run on {} gpus with batchsize = {}.'.format(
-    torch.cuda.device_count(), batch_size
-))
+if local_rank == 0:
+    logger.info('Run on {} gpus with batchsize = {}.'.format(
+        torch.cuda.device_count(), batch_size
+    ))
 start_timestamp = time.time()
 
 # Forward and backward pass
@@ -49,5 +52,6 @@ for batch in dataloader:
     result = model(batch)
     result.mean().backward()
 
-logger.info('Time ellapsed: {}s'.format(time.time() - start_timestamp))
+if local_rank == 0:
+    logger.info('Time ellapsed: {}s'.format(time.time() - start_timestamp))
 

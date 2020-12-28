@@ -23,20 +23,14 @@ $ CUDA_VISIBLE_DEVICES=0,1,2,3,4,5,6,7 python -m torch.distributed.launch --npro
 *****************************************
 Setting OMP_NUM_THREADS environment variable for each process to be 1 in default, to avoid your system being overloaded, please further tune the variable for optimal performance in your application as needed. 
 *****************************************
-2020-12-25 15:03:34,742 [INFO] <data parallel> Run on 8 gpus with batchsize = 80.
-2020-12-25 15:03:34,743 [INFO] <data parallel> Run on 8 gpus with batchsize = 80.
-2020-12-25 15:03:34,748 [INFO] <data parallel> Run on 8 gpus with batchsize = 80.
-2020-12-25 15:03:34,751 [INFO] <data parallel> Run on 8 gpus with batchsize = 80.
-2020-12-25 15:03:34,752 [INFO] <data parallel> Run on 8 gpus with batchsize = 80.
-2020-12-25 15:03:34,752 [INFO] <data parallel> Run on 8 gpus with batchsize = 80.
-2020-12-25 15:03:34,752 [INFO] <data parallel> Run on 8 gpus with batchsize = 80.
-2020-12-25 15:03:34,753 [INFO] <data parallel> Run on 8 gpus with batchsize = 80.
-2020-12-25 15:03:42,484 [INFO] <data parallel> Time ellapsed: 7.740724802017212s
-2020-12-25 15:03:42,484 [INFO] <data parallel> Time ellapsed: 7.7421228885650635s
-2020-12-25 15:03:42,484 [INFO] <data parallel> Time ellapsed: 7.7332093715667725s
-2020-12-25 15:03:42,484 [INFO] <data parallel> Time ellapsed: 7.7319347858428955s
-2020-12-25 15:03:42,484 [INFO] <data parallel> Time ellapsed: 7.735737562179565s
-2020-12-25 15:03:42,485 [INFO] <data parallel> Time ellapsed: 7.731153964996338s
-2020-12-25 15:03:42,485 [INFO] <data parallel> Time ellapsed: 7.7325520515441895s
-2020-12-25 15:03:42,487 [INFO] <data parallel> Time ellapsed: 7.733853816986084s
+2020-12-28 23:20:23,666 [INFO] <data parallel> Run on 8 gpus with batchsize = 80.
+2020-12-28 23:20:31,469 [INFO] <data parallel> Time ellapsed: 7.802914619445801s
+```
+
+Wrapping DDP:
+
+```bash
+$ python test_parallel/distributed_parallel_general.py
+2020-12-28 23:20:50,450 [INFO] <DDP_general> Run on 8 gpus with batchsize = 80.
+2020-12-28 23:20:58,376 [INFO] <DDP_general> Time ellapsed: 7.925983190536499s
 ```
